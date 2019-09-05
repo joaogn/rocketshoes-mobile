@@ -1,8 +1,12 @@
 import React from 'react';
-
 import { Image } from 'react-native';
+import { connect } from 'react-redux';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { RectButton } from 'react-native-gesture-handler';
+
+// eslint-disable-next-line no-unused-vars
+import { ApplicationState } from '../../store';
 
 import logo from '../../assets/images/logo.png';
 
@@ -12,9 +16,13 @@ interface Nav {
   navigation: any;
 }
 
-type Props = Nav;
+interface HeaderTypes {
+  cartSize?: number;
+}
 
-export default function Header({ navigation }: Props) {
+type Props = Nav & HeaderTypes;
+
+function Header({ navigation, cartSize }: Props) {
   return (
     <Container>
       <RectButton onPress={() => navigation.navigate('Home')}>
@@ -23,8 +31,12 @@ export default function Header({ navigation }: Props) {
 
       <BrasketContainer onPress={() => navigation.navigate('Cart')}>
         <Icon name="shopping-basket" color="#FFF" size={24} />
-        <Item>{2}</Item>
+        <Item>{cartSize}</Item>
       </BrasketContainer>
     </Container>
   );
 }
+
+export default connect((state: ApplicationState) => ({
+  cartSize: state.cart.length,
+}))(Header);
