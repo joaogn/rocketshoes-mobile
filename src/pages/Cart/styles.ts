@@ -19,6 +19,7 @@ export const Item = styled.View`
 
 export const Product = styled.View`
   flex-direction: row;
+  align-items: center;
 `;
 
 export const ProductImage = styled.Image`
@@ -29,6 +30,7 @@ export const ProductImage = styled.Image`
 
 export const ProductDescription = styled.View`
   margin-left: 5px;
+  margin-right: 20px;
   max-width: 163px;
   justify-content: center;
 `;

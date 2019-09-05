@@ -53,7 +53,7 @@ function* addToCart({ id }: AddCartSagaTypes) {
 }
 
 function* updateAmount({ id, amount }: UpdateAmountSagaTypes) {
-  if (amount && amount <= 0) {
+  if (amount <= 0) {
     yield put(removeFromCart(id));
     return;
   }
