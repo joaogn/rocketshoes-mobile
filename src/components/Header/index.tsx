@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { RectButton } from 'react-native-gesture-handler';
 
-// eslint-disable-next-line no-unused-vars
 import { ApplicationState } from '../../store';
 
 import logo from '../../assets/images/logo.png';

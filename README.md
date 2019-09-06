@@ -1,6 +1,6 @@
 # RocketShoes Mobile
 
-eCommerce Mobile utilizando o React-Native Desafio 7 do bootcamp GoStack
+eCommerce Mobile utilizando o React-Native Redux e (Hooks Desafio 8 no Branch) Desafio 7 do bootcamp GoStack
 
 ## Desafio 07. Redux
 
