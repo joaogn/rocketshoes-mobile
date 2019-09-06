@@ -16,7 +16,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
@@ -31,8 +31,10 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'no-console': ['error', { allow: ['tron'] }],
     'no-param-reassign': 'off',
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-    'import/no-cycle': 'off'
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
+    'import/no-cycle': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };

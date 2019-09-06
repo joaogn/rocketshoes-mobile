@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { RectButton } from 'react-native-gesture-handler';
@@ -15,13 +15,10 @@ interface Nav {
   navigation: any;
 }
 
-interface HeaderTypes {
-  cartSize?: number;
-}
+type Props = Nav;
 
-type Props = Nav & HeaderTypes;
-
-function Header({ navigation, cartSize }: Props) {
+export default function Header({ navigation }: Props) {
+  const cartSize = useSelector((state: ApplicationState) => state.cart.length);
   return (
     <Container>
       <RectButton onPress={() => navigation.navigate('Home')}>
@@ -35,7 +32,3 @@ function Header({ navigation, cartSize }: Props) {
     </Container>
   );
 }
-
-export default connect((state: ApplicationState) => ({
-  cartSize: state.cart.length,
-}))(Header);
